@@ -24,11 +24,16 @@ def run_quiz(questions):
      score = 0
      for question in questions:
           answer = input(question.prompt)
+
           running = True
           while running:
               if answer == 'a' or answer =='b' or answer =='c' or answer =='d' or answer =='1' or answer == '0' or answer =='2' or answer =='3':
                   running = False
                   break
+              if answer != 'a' or answer !='b' or answer !='c' or answer !='d' or answer !='1' or answer != '0' or answer !='2' or answer !='3':
+                  print("Incorrect syntax")
+                  answer = input(question.prompt)
+
           if answer == question.answer:
                score += 1
                print("Correct!")
